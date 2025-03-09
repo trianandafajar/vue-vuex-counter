@@ -1,15 +1,12 @@
 <template>
-    <div class="counter-squared">
-        {{$store.state.counter}} <sup>2</sup> = {{ $store.getters.counterSquared }}
-    </div>
+  <div class="counter-squared">
+    {{ $store.state.counter }} <sup>2</sup> =
+    {{ $store.getters.counterSquared }}
+  </div>
 </template>
 
 <script>
-export default {
-
-}
+export default {};
 </script>
 
-<style>
-
-</style>
+<style></style>

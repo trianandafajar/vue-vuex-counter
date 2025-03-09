@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
+    <img alt="Vue logo" src="../assets/logo.png" />
     <Counter />
     <CounterSquare />
     <Button />
@@ -16,9 +16,9 @@ import InputColorCode from "../components/InputColorCode.vue";
 // @ is an alias to /src
 
 export default {
-    name: "HomeView",
-    components: { Counter, CounterSquare, Button, InputColorCode }
-}
+  name: "HomeView",
+  components: { Counter, CounterSquare, Button, InputColorCode },
+};
 </script>
 
 <style>
