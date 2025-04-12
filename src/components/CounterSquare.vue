@@ -9,4 +9,11 @@
 export default {};
 </script>
 
-<style></style>
+<style scoped>
+.counter-squared {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin: 20px 0;
+}
+</style>
