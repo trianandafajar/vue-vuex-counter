@@ -1,6 +1,10 @@
 <template>
-  <div class="">
-    <input type="text" v-model="colorCode" placeholder="Enter the Color" />
+  <div class="color-input">
+    <input 
+      type="text" 
+      v-model="colorCode" 
+      placeholder="Enter the Color" 
+    />
   </div>
 </template>
 
@@ -8,9 +12,12 @@
 export default {
   computed: {
     colorCode: {
-      set(number) {
-        this.$store.dispatch("setColorCode", number);
+      // Setter
+      set(value) {
+        // Dispatch action to update Vuex store
+        this.$store.dispatch("setColorCode", value);
       },
+      // Getter
       get() {
         return this.$store.state.colorCode;
       },
@@ -19,4 +26,14 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+.color-input input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 300px;
+  margin: 10px 0;
+}
+</style>
