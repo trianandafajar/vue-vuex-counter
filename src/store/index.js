@@ -23,22 +23,35 @@ export default createStore({
     },
   },
   actions: {
+    // Action untuk menambah counter dengan angka acak dari API
     increaseCounter({ commit }) {
       axios(
         "https://www.random.org/integers/?num=1&min=1&max=6&col=1&base=10&format=plain&rnd=new"
-      ).then((res) => {
-        commit("increaseCounter", res.data);
-      });
+      )
+        .then((res) => {
+          // Menambahkan angka acak ke counter melalui mutation
+          commit("increaseCounter", res.data);
+        })
+        .catch((error) => {
+          console.error("Error fetching data for increaseCounter:", error);
+        });
     },
+    // Action untuk mengurangi counter dengan angka acak dari API
     decreaseCounter({ commit }) {
       axios(
         "https://www.random.org/integers/?num=1&min=1&max=6&col=1&base=10&format=plain&rnd=new"
-      ).then((res) => {
-        commit("decreaseCounter", res.data);
-      });
+      )
+        .then((res) => {
+          // Mengurangi angka acak dari counter melalui mutation
+          commit("decreaseCounter", res.data);
+        })
+        .catch((error) => {
+          console.error("Error fetching data for decreaseCounter:", error);
+        });
     },
-    setColorCode({ commit }, number) {
-      commit("setColorCode", number);
+    // Action untuk mengubah kode warna
+    setColorCode({ commit }, colorCode) {
+      commit("setColorCode", colorCode);
     },
   },
   modules: {},
